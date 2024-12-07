@@ -1,4 +1,4 @@
-package cicdpipeline
+package main
 
 import "fmt"
 
