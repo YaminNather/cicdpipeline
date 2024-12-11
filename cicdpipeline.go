@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+    "go.uber.org/fx"
+
+    "example/user/cicdpipeline/restapi"
+)
 
 func main() {
-  fmt.Println("Hello, world")
+    var fxOption []fx.Option = []fx.Option{}
+    fxOption = append(fxOption, restapi.AddServerToFx()...)
+    var fxApplication = fx.New(fxOption...)
+
+    fxApplication.Run()
 }
